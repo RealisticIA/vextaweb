@@ -425,6 +425,8 @@ ul {
     position: relative;
     width: 100%;
     overflow: hidden;
+    /* Vertical padding so the hover lift (-2px) and pill top border aren't clipped by overflow:hidden */
+    padding: 12px 0;
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
@@ -503,21 +505,10 @@ ul {
     line-height: 1.7;
 }
 
-.partners-group-label {
-    font-size: var(--font-size-sm);
-    color: var(--accent-secondary);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: var(--spacing-8);
-}
-
-.business-partners-grid {
+.partners-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-6);
-    margin-bottom: var(--spacing-20);
 }
 
 .partner-card {
@@ -542,9 +533,11 @@ ul {
     align-items: center;
     justify-content: center;
     align-self: flex-start;
+    height: 68px;
+    min-width: 120px;
     background: #fff;
     border-radius: var(--radius-lg);
-    padding: var(--spacing-5) var(--spacing-6);
+    padding: 14px 22px;
     margin-bottom: var(--spacing-6);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: transform var(--transition-base);
@@ -556,9 +549,9 @@ ul {
 
 .partner-logo-box img {
     display: block;
-    height: 32px;
+    height: 30px;
     width: auto;
-    max-width: 200px;
+    max-width: 170px;
     object-fit: contain;
 }
 
@@ -568,49 +561,6 @@ ul {
     line-height: 1.7;
     margin: 0;
 }
-
-.tech-partners-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-6);
-    justify-content: center;
-}
-
-.tech-partner-pill {
-    width: 200px;
-    height: 96px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 var(--spacing-6);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.44) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    border-radius: var(--radius-lg);
-    box-shadow:
-        0 14px 34px rgba(0, 0, 0, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.40);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: #475467;
-    font-weight: 600;
-    font-size: 0.9375rem;
-    transition: all var(--transition-base);
-}
-
-.tech-partner-pill:hover {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.52) 100%);
-    border-color: rgba(255, 255, 255, 0.78);
-    transform: translateY(-2px);
-}
-
-.tech-partner-pill img {
-    display: block;
-    height: 32px;
-    width: auto;
-    max-width: 150px;
-    object-fit: contain;
-}
-
 
 
 .hero-title {
@@ -1595,9 +1545,8 @@ ul {
         gap: var(--spacing-10);
     }
 
-    .business-partners-grid {
+    .partners-grid {
         grid-template-columns: 1fr;
-        margin-bottom: var(--spacing-16);
     }
     
     .footer-content {
